@@ -1,7 +1,34 @@
 body {
-    background-color: #efefef;
+    background-color: #EFEFEF;
+    font-size:100%;
 }
 
-.slider {
-    height: 100px;
+
+/* slider sltyling*/
+.slider{
+    margin-top: 5%;
+}
+.item {
+    height:60em;
+}
+
+
+/* nav styling */
+.glyphicon{
+    font-size: 40px;
+    margin-right: 1em;
+}
+.navbar {
+    background-color: #404040;
+}
+nav {
+    padding-top: 1%;
+    padding-bottom: 1%;
+    color:white;
+}
+nav a {
+    font-size: 200%;
+}
+#remember {
+    margin-left: 1em;
 }
