@@ -1,11 +1,14 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
+from django.views import generic
+from django.shortcuts import render, redirect
+# from django.contrib.auth import authenticate, login
+# from forms import UserForm
 
-from django.shortcuts import render
-from .models import Books
 
-
-# Create your views here.
 def index(request):
-    allbooks = Books.objects.all()
-    return render(request, 'home/home.html', {'allbooks': allbooks})
+    return render(request, 'home/home.html')
+
+
+def register(request):
+    return render(request, 'home/register.html')
