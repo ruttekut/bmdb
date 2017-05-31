@@ -19,16 +19,19 @@ body {
     margin-right: 1em;
 }
 .navbar {
-    background-color: #404040;
+    background-color: white;
 }
 nav {
     padding-top: 1%;
     padding-bottom: 1%;
-    color:white;
 }
 nav a {
     font-size: 200%;
 }
 #remember {
     margin-left: 1em;
+}
+
+.btn {
+    margin-bottom: 2em;
 }
