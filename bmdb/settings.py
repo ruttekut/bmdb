@@ -124,4 +124,4 @@ STATIC_URL = '/static/'
 
 # redirect de login url normally its accounts/profile
 LOGIN_REDIRECT_URL = '/account'
-LOGIN_URL = '/login'
+LOGIN_URL = '/home/login.html'

@@ -6,5 +6,5 @@ urlpatterns = [
     url(r'^$', views.index, name='index'),
     url(r'^register/$', views.UserFormView.as_view(), name='register'),
     url(r'^logout/$', views.Logout, name='logout'),
-    url(r'^login/$', login, {'template_name': 'home/login.html'}),
+    url(r'^login/$', login, {'template_name': 'home/login.html'}, name='login'),
 ]
