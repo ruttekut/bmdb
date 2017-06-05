@@ -1,9 +1,12 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.views import View
 from .forms import UserForm
+from django.contrib.auth import logout
 
 
 def index(request):
+    if request.user.is_authenticated():
+        return redirect('account/index')
     return render(request, 'home/home.html')
 
 
@@ -29,8 +32,9 @@ class UserFormView(View):
             return render(request, 'home/registersucces.html')
 
 
-
-
+def Logout(request):
+    logout(request)
+    return redirect('index')
 
 
 

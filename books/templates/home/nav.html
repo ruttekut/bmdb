@@ -12,9 +12,15 @@
                     <li><a href="#">Books <span class="sr-only">(current)</span></a></li>
                     <li><a href="#">About InternetBdB</a></li>
                 </ul>
-                <div class="nav navbar-nav navbar-right">
-                        <a class="btn btn-primary" href="login" role="button">login</a>
-                </div>
+                {% if user.is_authenticated %}
+                    <div class="nav navbar-nav navbar-right">
+                            <a class="btn btn-primary" href="{% url 'logout'%}" role="button">Logout</a>
+                    </div>
+                {% else %}
+                    <div class="nav navbar-nav navbar-right">
+                            <a class="btn btn-primary" href="login" role="button">login</a>
+                    </div>
+                {% endif %}
             </div><!-- /.navbar-collapse -->
         </div><!-- /.container-fluid -->
     </nav>
