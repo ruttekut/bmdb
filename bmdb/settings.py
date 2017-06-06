@@ -125,3 +125,5 @@ STATIC_URL = '/static/'
 # redirect de login url normally its accounts/profile
 LOGIN_REDIRECT_URL = '/account'
 LOGIN_URL = '/home/login.html'
+MEDIA_ROOT = '/home/programming/bmdb/media/'
+MEDIA_URL = '/media/'

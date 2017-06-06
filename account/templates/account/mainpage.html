@@ -1,0 +1,11 @@
+{% load staticfiles%}
+{% block mainpage %}
+    <div class="container">
+        <div class="row">
+            {% for book in object_list %}
+                <div class="col-md-3">
+                    <h1>{{book.name}} </h1>
+                    <img src="{{book.img.path}}" alt="">
+                </div>
+            {% endfor %}
+{% endblock %}
