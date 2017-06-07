@@ -108,8 +108,8 @@
             <input name="username" type="email" class="form-control" id="email" placeholder="Email"/>
             <input name="password" type="password" placeholder="password"/>
             <button type='submit'>Register</button>
-            <p class="message">Already an account<a href="{% url 'login' %}"> login</a></p>
-            <p><a href="{% url 'index'%}"><b>HomePage</b></a></p>
+            <p class="message">Already an account<a href="{% url 'books:login' %}"> login</a></p>
+            <p><a href="{% url 'books:index'%}"><b>HomePage</b></a></p>
         </form>
     </div>
 </div>

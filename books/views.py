@@ -5,7 +5,7 @@ from django.contrib.auth import logout
 
 
 def index(request):
-    if request.user.is_authenticated():
+    if request.user.is_authenticated:
         return redirect('account/index')
     return render(request, 'home/home.html')
 
@@ -34,47 +34,4 @@ class UserFormView(View):
 
 def Logout(request):
     logout(request)
-    return redirect('index')
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-# class LoginView(View):
-#         form_class = UserForm
-#         template_name = 'home/login.html'
-#
-#         def get(self, request):
-#             form = self.form_class(None)
-#             return render(request, self.template_name, {'form': form})
-#
-#         def post(self, request):
-#             form = self.form_class(request.POST)
-#             if form.is_valid():
-#                 username = form.cleaned_data['username']
-#                 password = form.cleaned_data['password']
-#                 user = authenticate(username=username, password=password)
-#                 if user is not None:
-#                     if user.is_active:
-#                         login(request, user)
-#                         return (request, 'home/registersucces.html')
-#                 return render(request, self.template_name, {'form': form})
-#             else:
-#                 return render(request, 'home/home.html')
+    return redirect('books:index')

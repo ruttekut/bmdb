@@ -14,7 +14,7 @@
                 </ul>
                 {% if user.is_authenticated %}
                     <div class="nav navbar-nav navbar-right">
-                            <a class="btn btn-primary" href="{% url 'logout'%}" role="button">Logout</a>
+                            <a class="btn btn-primary" href="{% url 'books:logout'%}" role="button">Logout</a>
                     </div>
                 {% else %}
                     <div class="nav navbar-nav navbar-right">

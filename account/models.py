@@ -12,7 +12,7 @@ class Books(models.Model):
     name = models.CharField(max_length=1000)
     author = models.CharField(max_length=1000)
     description = models.TextField()
-    img = models.ImageField(upload_to='images/books')
+    img = models.ImageField()
 
     def __str__(self):
             return self.name
