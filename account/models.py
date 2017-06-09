@@ -36,14 +36,14 @@ class Books(models.Model):
     current_user = models.ForeignKey(User, related_name='owner', null=True)
 
     @classmethod
-    def connect_user_book(cls, current_user, new_book):
+    def add_favorite(cls, current_user, new_book):
         book, created = cls.objects.get_or_create(
             current_user=current_user
         )
         book.users.add(new_book)
 
     @classmethod
-    def remove_user_book(cls, current_user, new_book):
+    def remove_favorite(cls, current_user, new_book):
         book, created = cls.objects.get_or_create(
             current_user=current_user
         )

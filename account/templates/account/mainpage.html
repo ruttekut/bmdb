@@ -1,5 +1,13 @@
+{% extends 'home/base.html'%}
 {% load staticfiles%}
-{% block mainpage %}
+
+{% block content %}
+{% include 'home/nav.html'%}
+<style>
+    h1 {
+        border-bottom:2px solid;
+    }
+</style>
 <div class="container">
     <div class="categories">
         <div class="row">

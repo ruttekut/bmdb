@@ -8,7 +8,10 @@ app_name = 'account'
 urlpatterns = [
     url(r'^account/$', views.IndexView.as_view(), name='index'),
     url(r'^account/(?P<pk>\d+)/$', views.DetailView.as_view(), name="detail"),
+    url(r'^addfavorite/(?P<operation>.+)/(?P<pk>\d+)/$',
+        views.change_favorite, name="changefavorite"),
 ]
+
 
 if settings.DEBUG:
     urlpatterns += [
