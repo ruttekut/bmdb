@@ -4,7 +4,7 @@ from django.views import generic
 from account.models import Books
 
 
-@method_decorator(login_required(login_url='login'), name='dispatch')
+@method_decorator(login_required(login_url='books:login'), name='dispatch')
 class IndexView(generic.ListView):
     template_name = 'account/home.html'
 

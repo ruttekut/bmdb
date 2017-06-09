@@ -3,7 +3,9 @@ body {
     font-size:100%;
 }
 
-
+.container {
+    margin-bottom: 15em;   
+}
 /* slider sltyling*/
 .slider{
     margin-top: 5%;
