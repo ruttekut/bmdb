@@ -2,16 +2,18 @@
 <html lang="en">
 <head>
     {% load staticfiles %}
-    <title>IBdB</title>
+    {% block title %}{% endblock %}
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300|Vibur" rel="stylesheet">
     <link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.min.css'%}">
-    <link rel="stylesheet" href="{% static 'home/css/style.css'%}">
     <link rel="stylesheet" href="{% static 'home/css/footer/style.css'%}">
+    <link rel="stylesheet" href="{% static 'home/css/style.css'%}">
 </head>
 <body>
     {%block content%}
     {%endblock%}
+
     <footer class="footer-distributed">
         <div class="footer-right">
             <a href="http://www.facebook.com"><i class="fa fa-facebook"><img src="{% static 'home/img/socialmedia/fb.png'%}" </i></a>

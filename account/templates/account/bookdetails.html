@@ -1,0 +1,44 @@
+{% extends 'home/base.html' %}
+
+{% block content %}
+    {% include 'home/nav.html' %}
+    <style>
+        p.booktitle {
+            font-family: 'Lora', serif;
+            font-size: 5em;
+        }
+        p.description {
+            font-size:2em;
+        }
+        h1 {
+            font-family: 'Lora', serif;
+        }
+        .detailrow {
+            margin-bottom: 3em;
+            border-bottom: 1px solid #aaa;
+        }
+
+    </style>
+    <div class="container">
+        <div class="row detailrow">
+            <div class="col-md-4 col-xs-4 col-lg-4">
+                <h4>Author: {{object.author}}</h4>
+            </div>
+            <div class="col-md-8 col-xs-8 col-lg-8">
+                <p class="booktitle">{{object.name}}</p><br>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-4 col-xs-4 col-lg-4 ">
+                    <img class="img-responsive" width='400' height='600' src="{{object.img.url}}" >
+            </div>
+            <div class="col-md-4 col-xs-4 col-lg-4">
+                <div class="description">
+                    <h1>Description</h1>
+                    <p class="description">{{object.description}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

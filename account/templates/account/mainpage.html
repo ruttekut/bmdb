@@ -1,45 +1,47 @@
 {% load staticfiles%}
-<style>
-    /*h1 {margin-bottom: 0em;}*/
-
-    
-</style>
-
 {% block mainpage %}
-    <div class="container">
-        <div class="categories">
-            <div class="row">
-                <h1>Science</h1>
-                {% for book in object_list %}
-                        {% if book.genre == 'science' %}
-                        <div class="col-md-3 books">
-                            <h4>{{book.name}} </h4>
-                        </a><img class="img-responsive"src="{{book.img.url}}" style='height:40em; width:30em' height="100%">
-                        </div>
-                        {% endif %}
-                {% endfor %}
-            </div>
-            <div class="row">
-                <h1>Roman</h1>
-                {% for book in object_list %}
-                        {% if book.genre == 'romans' %}
-                            <div class="col-md-3 books">
-                                <h4>{{book.name}} </h4>
-                                <img class="img-responsive"src="{{book.img.url}}" style='height:40em; width:30em' height="100%">
-                            </div>
-                        {% endif %}
-                {% endfor %}
-            </div>
-            <div class="row">
-                <h1>Romance</h1>
-                {% for book in object_list %}
-                        {% if book.genre == 'romance' %}
-                            <div class="col-md-3 books">
-                                <h4>{{book.name}} </h4>
-                                <img class="img-responsive"src="{{book.img.url}}" style='height:40em; width:30em' height="100%">
-                            </div>
-                        {% endif %}
-                {% endfor %}
-            </div>
+<div class="container">
+    <div class="categories">
+        <div class="row">
+            <h1>Science</h1>
+            {% for book in object_list %}
+                {% if book.genre == 'science' %}
+                    <div class="col-md-3 col-xs-3 col-lg-3 books">
+                        <h4>{{book.name}} </h4>
+                        <a href="{% url 'account:detail' book.id %}">
+                            <img class="img-responsive"src="{{book.img.url}}" style='height:40em; width:30em' height="100%">
+                        </a>
+                    </div>
+                {% endif %}
+            {% endfor %}
         </div>
+
+        <div class="row">
+            <h1>Roman</h1>
+            {% for book in object_list %}
+                {% if book.genre == 'romans' %}
+                    <div class="col-md-3 col-xs-3 col-lg-3 books">
+                        <h4>{{book.name}} </h4>
+                        <a href="{% url 'account:detail' book.id %}">
+                            <img class="img-responsive"src="{{book.img.url}}" style='height:40em; width:30em' height="100%">
+                        </a>
+                    </div>
+                {% endif %}
+            {% endfor %}
+        </div>
+
+        <div class="row">
+            <h1>Romance</h1>
+            {% for book in object_list %}
+                {% if book.genre == 'romance' %}
+                    <div class="col-md-3 col-xs-3 col-lg-3 books">
+                        <h4>{{book.name}} </h4>
+                        <a href="{% url 'account:detail' book.id %}">
+                            <img class="img-responsive"src="{{book.img.url}}" style='height:40em; width:30em' height="100%">
+                        </a>
+                    </div>
+                {% endif %}
+            {% endfor %}
+        </div>
+    </div>
 {% endblock %}

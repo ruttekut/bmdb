@@ -6,7 +6,7 @@ from django.contrib.auth import logout
 
 def index(request):
     if request.user.is_authenticated:
-        return redirect('account/index')
+        return redirect('account:index')
     return render(request, 'home/home.html')
 
 

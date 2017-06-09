@@ -33,13 +33,21 @@ class Books(models.Model):
     img = models.ImageField()
     ratings = models.IntegerField(default=0)
     users = models.ManyToManyField(User)
-    current_user = models.ForeignKey(User, related_name='owner')
+    current_user = models.ForeignKey(User, related_name='owner', null=True)
 
     @classmethod
-    def connect_user_book(cls, current_book, new_user):
+    def connect_user_book(cls, current_user, new_book):
+        book, created = cls.objects.get_or_create(
+            current_user=current_user
+        )
+        book.users.add(new_book)
 
-
-
+    @classmethod
+    def remove_user_book(cls, current_user, new_book):
+        book, created = cls.objects.get_or_create(
+            current_user=current_user
+        )
+        book.users.remove(new_book)
 
     def __str__(self):
             return self.name
