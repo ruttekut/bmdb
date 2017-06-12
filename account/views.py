@@ -19,10 +19,17 @@ class DetailView(generic.DetailView):
     template_name = 'account/bookdetails.html'
 
 
-def change_favorite(request, operation, pk):
-    new_book = User.objects.get(pk=pk)
+class ListMybooks(generic.ListView):
+    template_name = 'account/mainpage.html'
+
+    def get_queryset(self):
+        return Books.objects.filter(users=self.request.user)
+
+
+def change_to_favorite(request, operation, pk):
+    new_book = Books.objects.get(pk=pk)
     if operation == 'add':
-        Books.add_favorite(request.user, new_book)
+        Books.add_book(request.user, new_book)
     elif operation == 'remove':
         Books.remove_favorite(request.user, new_book)
     redirect('account:IndexView')
